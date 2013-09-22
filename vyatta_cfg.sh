@@ -1,6 +1,11 @@
 #!/bin/vbash
 # encoding: utf-8
 
+if [ `id -u` != 0 ];then
+	echo "Run as root! \"sudo $0\""
+	exit
+fi
+
 # SEE: http://wiki.het.net/wiki/Cli-shell-api
 
 ############
