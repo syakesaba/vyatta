@@ -9,10 +9,10 @@ fi
 # SEE: http://wiki.het.net/wiki/Cli-shell-api
 
 ############
-# Tested:
+# Usage:
+# ./vyatta_cfg.sh --help
 #
-# [VC6.6R1]
-#Linux vyatta 3.3.8-1-586-vyatta #1 SMP Wed Mar 13 10:35:45 PDT 2013 i686 GNU/Linux
+# Tested version: [VC6.6R1]
 ############
 
 SHELL_API="cli-shell-api"
