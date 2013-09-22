@@ -124,6 +124,7 @@ case $FILENAME in
             echo "# $0 erase : erase symbolic links"
             echo "# source $0 (in shell script): enter configuration mode. don't forget \$EXIT mode manually."
             echo "#######################"
+            $EXIT
     ;;
     esac
     # echo "$0:config:`date`" >> /var/log/vyatta_cfg/config.date
