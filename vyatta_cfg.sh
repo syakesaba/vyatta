@@ -1,8 +1,8 @@
 #!/bin/vbash
 # encoding: utf-8
 
-if [ `id -u` != 0 ];then
-	echo "Run as root! \"sudo $0\""
+if [ "`id -Gn | grep vyattacfg`" ];then
+	echo "Run as user 'vyatta' !"
 	exit
 fi
 
@@ -25,6 +25,12 @@ $SHELL_API setupSession
 $SHELL_API inSession
 if [ $? -ne 0 ]; then
     echo "Error opening vyatta configuration session."
+fi
+
+if [ ! ${vyatta_sbindir} ];then
+    vyatta_sbindir=/opt/vyatta/sbin
+    echo "\$vyatta_sbindir is not set."
+    echo "using vyatta_sbindir=$vyatta_sbindir ."
 fi
 
 SHOW="$SHELL_API showCfg "
