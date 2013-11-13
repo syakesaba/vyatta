@@ -1,10 +1,10 @@
 #!/bin/vbash
 # encoding: utf-8
 
-if [ "`id -Gn | grep vyattacfg`" ];then
-	echo "Run as user 'vyatta' !"
-	exit
-fi
+#if [ "`id -Gn | grep vyattacfg`" ];then
+#   echo "Run as user 'vyatta' !"
+#   exit
+#fi
 
 # SEE: http://wiki.het.net/wiki/Cli-shell-api
 
