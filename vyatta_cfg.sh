@@ -1,6 +1,8 @@
 #!/bin/vbash
 # encoding: utf-8
 
+# author sya-ke
+
 #if [ "`id -Gn | grep vyattacfg`" ];then
 #   echo "Run as user 'vyatta' !"
 #   exit
@@ -61,7 +63,7 @@ case $FILENAME in
     $EXIT
     ;;
     "delete")
-        $DELETE $@
+    $DELETE $@
     $COMMIT
     $EXIT
     ;;
@@ -76,7 +78,7 @@ case $FILENAME in
     $EXIT
     ;;
     "rename")
-        $RENAME $@
+    $RENAME $@
     $COMMIT
     $EXIT
     ;;
@@ -112,9 +114,9 @@ case $FILENAME in
             echo "creating symbolic links..."
             for VYATTA_CMD in "show" "set" "delete" "copy" "move" "rename" "comment" "discard" "save" "load"
             do
-            ln -T -s "$0" "$VYATTA_CMD"
-                done
-                $EXIT
+                ln -T -s "$0" "$VYATTA_CMD"
+            done
+            $EXIT
         ;;
         "erase"|"-r"|"--erase")
             echo "erasing symbolic links..."
@@ -133,6 +135,8 @@ case $FILENAME in
             $EXIT
     ;;
     esac
-    # echo "$0:config:`date`" >> /var/log/vyatta_cfg/config.date
+    # #for logging -
+    # touch /var/log/vyatta_cfg.log
+    # echo "`date`$USER:$PPID:$0 $@" >> /var/log/vyatta_cfg.log
     ;;
 esac
